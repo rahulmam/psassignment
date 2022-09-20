@@ -3,13 +3,14 @@ kind: Service
 metadata:
   name: hello-svc
 spec:
+  type: Loadbalancer
   selector:
     role: app
+    version: "1.0"
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
-      nodePort: 32000
-  type: NodePort
+  type: LoadBalancer
   
   
